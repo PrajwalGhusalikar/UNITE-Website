@@ -1,0 +1,182 @@
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import uniteLogo from "../Assets/unitelogo.png";
+
+const Navbar = () => {
+  const [toggle, settoggle] = useState("");
+  let ref = useRef();
+
+  return (
+    <div className="w-screen ">
+      <div className="flex  justify-between items-center w-screen h-16 sm:h-24 text-black  z-20">
+        <div className="text-black font-serif text-start px-4 text-4xl  sm:w-96 w-auto ml-2 flex space-x-2">
+          <img src={uniteLogo} alt="" className="md:h-16 md:w-16  h-10 w-10" />{" "}
+          <p>Unite</p>
+        </div>
+        <div className="hidden md:flex space-x-4  text-xl justify-between p-1 pr-5 mr-10">
+          <Link
+            to="/"
+            className="m-auto p-2 font-light rounded-2xl text-center hover:font-bold w-20 hover:bg-slate-200 hover:text-red-400 text-black cursor-pointer hover:transition duration-150 hover:ease-in-out hover:scale-105 hover:-translate-y-0.5 focus:text-red-300  focus:font-semibold  focus:underline "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Home
+          </Link>
+
+          <Link
+            to="aboutus"
+            className="m-auto p-2 font-light rounded-2xl text-center  hover:font-bold w-28 hover:bg-slate-200 hover:text-red-400 text-black cursor-pointer hover:transition duration-150 hover:ease-in-out hover:scale-105 hover:-translate-y-0.5 focus:text-red-300  focus:font-semibold  focus:underline "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            About Us
+          </Link>
+
+          <Link
+            to="resources"
+            className="m-auto p-2 font-light rounded-2xl text-center hover:font-bold w-28 hover:bg-slate-200 hover:text-red-400 text-black cursor-pointer   hover:transition duration-150 hover:ease-in-out hover:scale-105 hover:-translate-y-0.5 focus:text-red-300  focus:font-semibold  focus:underline "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Resources
+          </Link>
+
+          <Link
+            to="riskfactors"
+            className="m-auto p-2 font-light rounded-2xl text-center hover:font-bold w-32 hover:bg-slate-200 hover:text-red-400 text-black cursor-pointer   hover:transition duration-150 hover:ease-in-out hover:scale-105 hover:-translate-y-0.5 focus:text-red-300  focus:font-semibold  focus:underline "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Risk Factors
+          </Link>
+
+          <Link
+            to="statictics"
+            className="m-auto p-2 px-0 font-light rounded-2xl text-center hover:font-bold w-28 hover:bg-slate-200 hover:text-red-400 text-black cursor-pointer   hover:transition duration-150 hover:ease-in-out hover:scale-105 hover:-translate-y-0.5 focus:text-red-300  focus:font-semibold  focus:underline "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Statistics
+          </Link>
+        </div>
+        {toggle ? (
+          ""
+        ) : (
+          <div
+            onClick={() => {
+              settoggle(true);
+            }}
+            className="  px-2 text-2xl  md:hidden hover:scale-120 cursor-pointer"
+          >
+            <i ref={ref} className="fa-solid fa-bars text-gray-300 pr-2"></i>
+          </div>
+        )}
+        {toggle ? (
+          <div
+            onClick={() => {
+              settoggle(false);
+            }}
+            className="  px-2 text-2xl  md:hidden hover:scale-120 cursor-pointer"
+          >
+            <i ref={ref} className="fa-solid fa-bars text-gray-300 pr-2"></i>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+
+      {toggle ? (
+        <div className="flex fixed top-0 left-0 right-0 z-5 flex-col justify-center text-center bg-slate-900 opacity-85 h-screen z-10 ">
+          <Link
+            className="text-white text-3xl py-4 hover:scale-115 cursor-pointer rounded-2xl text-center hover:font-bold  hover:bg-slate-200 hover:text-red-400 z-10 "
+            to="/"
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Home
+          </Link>
+
+          <Link
+            to="aboutus"
+            className="text-white text-3xl py-4 hover:scale-115 cursor-pointer rounded-2xl text-center hover:font-bold  hover:bg-slate-200 hover:text-red-400 z-10 "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            About Us
+          </Link>
+
+          <Link
+            to="resources"
+            className="text-white text-3xl py-4 hover:scale-115 cursor-pointer rounded-2xl text-center hover:font-bold  hover:bg-slate-200 hover:text-red-400 z-10 "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Resources
+          </Link>
+
+          <Link
+            to="riskfactors"
+            className="text-white text-3xl py-4 hover:scale-115 cursor-pointer rounded-2xl text-center hover:font-bold  hover:bg-slate-200 hover:text-red-400 z-10 "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Risk Factors
+          </Link>
+
+          <Link
+            to="statictics"
+            className="text-white text-3xl py-4 hover:scale-115 cursor-pointer rounded-2xl text-center hover:font-bold  hover:bg-slate-200 hover:text-red-400 z-10 "
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onClick={() => {
+              settoggle(false);
+            }}
+          >
+            Statistics
+          </Link>
+        </div>
+      ) : (
+        " "
+      )}
+    </div>
+  );
+};
+
+export default Navbar;
